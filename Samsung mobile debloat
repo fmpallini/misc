@@ -22,7 +22,7 @@ adb shell cmd package install-existing <name of package>
 --- Plus ---
 
 - To discover a specific app/service package name you can use some apps from PlayStore, like 'Package Names'.
-- Having monthly security updates, being able the disable system apps, the only thing that was still attracting me to rooting solutions was ad/tracking blocking at the system level but I'm having a good time with Blokada or similar solutions for a while. So rooting is not something needed anymore from my perspective.
+- Having monthly security updates and being able the disable system apps, the only thing that was still attracting me to rooting solutions was ad/tracking blocking at the system level but I'm having a good time with Blokada or similar solutions for a while. So rooting is not something needed anymore from my perspective.
 
 You can paste the above list directly on the terminal. Lines starting with '#' are ignored.
 
@@ -119,6 +119,8 @@ pm uninstall -k --user 0 com.samsung.android.fast # Secure Wi-Fi (Samsung VPN)
 pm uninstall -k --user 0 com.samsung.android.sm.devicesecurity # McAfee Antimalware
 pm uninstall -k --user 0 com.sec.android.app.chromecustomizations
 pm uninstall -k --user 0 com.samsung.android.vtcamerasettings
+pm uninstall -k --user 0 com.samsung.android.net.wifi.wifiguider
+pm uninstall -k --user 0 com.android.providers.partnerbookmarks
 
 # Samsung Privacy
 pm uninstall -k --user 0 com.samsung.sec.android.teegris.tui_service
@@ -196,7 +198,7 @@ pm uninstall -k --user 0 com.samsung.android.game.gamehome
 pm uninstall -k --user 0 com.samsung.android.game.gametools
 pm uninstall -k --user 0 com.samsung.android.game.gos
 
-# Knox
+# Knox / Work profile
 pm uninstall -k --user 0 com.samsung.android.knox.analytics.uploader
 pm uninstall -k --user 0 com.samsung.android.knox.attestation
 pm uninstall -k --user 0 com.samsung.android.knox.containeragent
@@ -212,7 +214,7 @@ pm uninstall -k --user 0 com.samsung.android.knox.pushmanager
 pm uninstall -k --user 0 com.android.managedprovisioning # Work profile setup
 pm uninstall -k --user 0 com.samsung.android.appseparation
 
-# Samsung Desktop / Dex
+# Samsung Desktop / Dex / Continuity Services
 pm uninstall -k --user 0 com.samsung.android.mdx
 pm uninstall -k --user 0 com.samsung.android.mdx.kit
 pm uninstall -k --user 0 com.samsung.android.mdx.quickboard
@@ -220,6 +222,8 @@ pm uninstall -k --user 0 com.samsung.desktopsystemui
 pm uninstall -k --user 0 com.sec.android.app.dexonpc
 pm uninstall -k --user 0 com.sec.android.app.desktoplauncher
 pm uninstall -k --user 0 com.sec.android.desktopmode.uiservice
+pm uninstall -k --user 0 com.samsung.android.mcfds
+pm uninstall -k --user 0 com.samsung.android.mcfserver
 
 # Samsung Pass / Pay / Payments
 pm uninstall -k --user 0 com.samsung.android.samsungpass
