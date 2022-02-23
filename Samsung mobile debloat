@@ -1,8 +1,6 @@
-Samsung has been making some pretty great phones for some time nowadays, especially the 'S' line is receiving 3 major Android versions updates, plus monthly security updates in a timely fashion. The main problem remaining on stock roms is the amount of bloatware/redundant apps that you don't use/need and keep draining juice and potentially leaking personal info or increasing the surface for security issues. Since Android 9 or 10, it's being possible to disable system apps through an ADB connection (I recommend 'Minimal ADB And Fastboot' + your device debug drivers), enable the developer's menu and USB debugging, and Voilà.
+Samsung has been making some pretty great phones for some time nowadays, especially the 'S' line receiving 4(!) major Android versions updates, plus monthly security updates in a timely fashion. The main problem remaining on stock ROMs is the amount of bloatware/redundant apps that you don't use/need and keep draining juice and potentially leaking personal info or increasing the surface for security issues. Since Android 9 or 10, it's been possible to disable system apps through an ADB connection (I recommend 'Minimal ADB And Fastboot' + your device debug drivers). Simply enable the developer's menu then USB debugging, and voilà.
 
-The following list was updated for Android 11 August 2021 running on my S10, it should be compatible with other phones from the same family or even any other Samsung phone. Please note that each people has a particular usage, and some apps I think are garbage could be useful for you. Go ahead with caution, for example disabling Samsung Keyboard without having an alternative one properly installed could let your phone unusable requiring a factory reset.
-
-#####
+The following list was updated for Android 12 January 2022 running on my S22, and it should be compatible with other phones from the same family or even any other Samsung phone. Please note that each person has a particular usage, and some apps I think are garbage could be useful for you. Go ahead with caution please! eg. Disabling the Samsung Keyboard without having an alternative one properly installed could leave your phone unusable requiring a factory reset.
 
 --- Some ABD commands help sheet ---
 
@@ -21,15 +19,14 @@ adb shell cmd package install-existing <name of package>
 
 --- Plus ---
 
-- To discover a specific app/service package name you can use some apps from PlayStore, like 'Package Names'.
-- Having monthly security updates and being able the disable system apps, the only thing that was still attracting me to rooting solutions was ad/tracking blocking at the system level but I'm having a good time with Blokada or similar solutions for a while. So rooting is not something needed anymore from my perspective.
+- To discover a specific app/service package name you can use some apps from PlayStore, like 'Package Names'. A good reference to mitigating possible mistakes when disabling packages is to check this page (https://www.alliancex.org/shield/apps.html)
+- After having monthly security updates and being able the disable system apps, the only thing that was still attracting me to rooting solutions was ad/tracking blocking at the system level but I'm having a good time with Blokada or similar solutions for a while. So rooting is not something needed anymore from my perspective.
 
 You can paste the above list directly on the terminal. Lines starting with '#' are ignored.
 
 ########
 
 # Printer
-pm uninstall -k --user 0 com.android.bips
 pm uninstall -k --user 0 com.android.printspooler
 pm uninstall -k --user 0 com.google.android.printservice.recommendation
 
@@ -43,124 +40,84 @@ pm uninstall -k --user 0 com.android.egg
 # Dictionary
 pm uninstall -k --user 0 com.diotek.sec.lookup.dictionary
 
-# Ant
-pm uninstall -k --user 0 com.dsi.ant.plugins.antplus
-pm uninstall -k --user 0 com.dsi.ant.sample.acquirechannels
-pm uninstall -k --user 0 com.dsi.ant.server
-pm uninstall -k --user 0 com.dsi.ant.service.socket
-
 # Facebook
 pm uninstall -k --user 0 com.facebook.appmanager
-pm uninstall -k --user 0 com.facebook.katana
 pm uninstall -k --user 0 com.facebook.services
 pm uninstall -k --user 0 com.facebook.system
-
-
-# One Time Initializers
-pm uninstall -k --user 0 com.google.android.onetimeinitializer
-pm uninstall -k --user 0 com.google.android.setupwizard
-pm uninstall -k --user 0 com.sec.android.app.SecSetupWizard
-
-# Android Auto / Driver Mode
-pm uninstall -k --user 0 com.google.android.projection.gearhead
-pm uninstall -k --user 0 com.samsung.android.drivelink.stub
 
 # Microsoft
 pm uninstall -k --user 0 com.microsoft.appmanager
 pm uninstall -k --user 0 com.microsoft.skydrive
-pm uninstall -k --user 0 com.skype.raider
 
-# Samsung All Share / Nearby / Mirror Link
-pm uninstall -k --user 0 com.samsung.android.allshare.service.fileshare
+# Samsung All Share / Nearby / Private Share
 pm uninstall -k --user 0 com.samsung.android.allshare.service.mediashare
 pm uninstall -k --user 0 com.samsung.android.easysetup
-pm uninstall -k --user 0 com.samsung.android.app.mirrorlink
-pm uninstall -k --user 0 com.sec.android.app.apex
 pm uninstall -k --user 0 com.samsung.android.privateshare
 
-# Samsung Widgets
-pm uninstall -k --user 0 com.samsung.android.app.sbrowseredge
+# Samsung Widgets / Edge Panels
+pm uninstall -k --user 0 com.samsung.android.app.cocktailbarservice # Edge Panels
 pm uninstall -k --user 0 com.samsung.android.app.appsedge
 pm uninstall -k --user 0 com.samsung.android.app.clipboardedge
 pm uninstall -k --user 0 com.samsung.android.app.taskedge
 pm uninstall -k --user 0 com.samsung.android.service.peoplestripe
 pm uninstall -k --user 0 com.sec.android.widgetapp.easymodecontactswidget
-pm uninstall -k --user 0 com.sec.android.widgetapp.samsungapps
-pm uninstall -k --user 0 com.sec.android.widgetapp.webmanual
 pm uninstall -k --user 0 com.sec.android.daemonapp #weather
 
-# Samsung Social
+# Samsung Social / Samsung Members
 pm uninstall -k --user 0 com.samsung.android.mateagent
-pm uninstall -k --user 0 com.samsung.android.app.social
-pm uninstall -k --user 0 com.samsung.android.svcagent
 
 # Samsung Bloatware
 pm uninstall -k --user 0 com.samsung.android.app.galaxyfinder
-pm uninstall -k --user 0 com.samsung.android.app.cocktailbarservice
 pm uninstall -k --user 0 com.samsung.android.app.camera.sticker.facearavatar.preload
 pm uninstall -k --user 0 com.samsung.android.app.dressroom # Wallpapers
-pm uninstall -k --user 0 com.samsung.android.app.tips
 pm uninstall -k --user 0 com.samsung.android.app.spage
-pm uninstall -k --user 0 com.samsung.android.clipboarduiservice
 pm uninstall -k --user 0 com.samsung.clipboardsaveservice
 pm uninstall -k --user 0 com.samsung.android.kidsinstaller
 pm uninstall -k --user 0 com.samsung.android.sdk.handwriting
 pm uninstall -k --user 0 com.samsung.android.stickercenter
-pm uninstall -k --user 0 com.samsung.android.visionarapps
 pm uninstall -k --user 0 com.sec.android.app.magnifier
 pm uninstall -k --user 0 com.sec.android.app.quicktool
 pm uninstall -k --user 0 com.sec.android.easyMover.Agent # SmartSwitch
 pm uninstall -k --user 0 com.sec.android.easyonehand # One Hand
 pm uninstall -k --user 0 com.sec.android.mimage.avatarstickers
 pm uninstall -k --user 0 com.samsung.android.dynamiclock
-pm uninstall -k --user 0 de.axelspringer.yana.zeropage
 pm uninstall -k --user 0 com.samsung.storyservice
 pm uninstall -k --user 0 com.samsung.android.fast # Secure Wi-Fi (Samsung VPN)
 pm uninstall -k --user 0 com.samsung.android.sm.devicesecurity # McAfee Antimalware
 pm uninstall -k --user 0 com.sec.android.app.chromecustomizations
-pm uninstall -k --user 0 com.samsung.android.vtcamerasettings
+pm uninstall -k --user 0 com.samsung.android.vtcamerasettings # video call effects
 pm uninstall -k --user 0 com.samsung.android.net.wifi.wifiguider
 pm uninstall -k --user 0 com.android.providers.partnerbookmarks
+pm uninstall -k --user 0 com.samsung.crane # Phone rich features
 
 # Samsung Privacy
-pm uninstall -k --user 0 com.samsung.sec.android.teegris.tui_service
 pm uninstall -k --user 0 com.sec.spp.push
 pm uninstall -k --user 0 com.sec.location.nsflp2
-pm uninstall -k --user 0 com.samsung.android.mdecservice
-pm uninstall -k --user 0 com.samsung.crane
 pm uninstall -k --user 0 com.samsung.android.mobileservice # Samsung Experience Service
 pm uninstall -k --user 0 com.samsung.android.rubin.app # Samsung Personalization
 pm uninstall -k --user 0 com.samsung.android.location
-pm uninstall -k --user 0 com.samsung.android.ipsgeofence
-
-# Phone Location & Call/SPAM Identifier
-#pm uninstall -k --user 0 com.samsung.android.smartcallprovider
-#pm uninstall -k --user 0 com.hiya.star
+pm uninstall -k --user 0 com.samsung.android.ipsgeofence # Samsung Visit In
 
 # Samsung Led Cover
-pm uninstall -k --user 0 com.samsung.android.app.ledbackcover
 pm uninstall -k --user 0 com.sec.android.cover.ledcover
 
 # Samsung Clock / Calendar / Reminder / TTS - Can be replaced with Google Ones
-pm uninstall -k --user 0 com.sec.android.app.clockpackage
+#pm uninstall -k --user 0 com.sec.android.app.clockpackage # I'm using Samsung Clock since Google one still buggy on A12
 pm uninstall -k --user 0 com.samsung.android.app.reminder
 pm uninstall -k --user 0 com.samsung.android.calendar
 pm uninstall -k --user 0 com.samsung.SMT # Samsung TTS
 pm uninstall -k --user 0 com.samsung.android.messaging
-pm uninstall -k --user 0 com.sec.android.inputmethod
+#pm uninstall -k --user 0 com.sec.android.inputmethod # Samsung Keyboard - is need for safe mode / battery mode
 pm uninstall -k --user 0 com.samsung.android.forest # Digital Wellbeing
 pm uninstall -k --user 0 com.sec.android.app.myfiles
 
 # Samsung Quick Share
 pm uninstall -k --user 0 com.samsung.android.aware.service
-pm uninstall -k --user 0 com.samsung.android.app.simplesharing
 pm uninstall -k --user 0 com.samsung.android.app.sharelive
-pm uninstall -k --user 0 com.samsung.android.smartmirroring
 
 # Samsung Bixby
 pm uninstall -k --user 0 com.samsung.android.app.routines
 pm uninstall -k --user 0 com.samsung.android.bixby.agent
-pm uninstall -k --user 0 com.samsung.android.bixby.agent.dummy
 pm uninstall -k --user 0 com.samsung.android.bixby.service
 pm uninstall -k --user 0 com.samsung.android.bixby.wakeup
 pm uninstall -k --user 0 com.samsung.android.bixbyvision.framework
@@ -169,23 +126,24 @@ pm uninstall -k --user 0 com.samsung.android.svoiceime
 pm uninstall -k --user 0 com.samsung.android.visionintelligence
 pm uninstall -k --user 0 com.samsung.systemui.bixby2
 
-# Samsung AR
+# Samsung AR / Camera modes
 pm uninstall -k --user 0 com.samsung.android.aremoji
 pm uninstall -k --user 0 com.samsung.android.aremojieditor
 pm uninstall -k --user 0 com.samsung.android.ardrawing
 pm uninstall -k --user 0 com.samsung.android.arzone
+pm uninstall -k --user 0 com.sec.android.autodoodle.service
+pm uninstall -k --user 0 com.samsung.android.livestickers
 
-# Samsung Gear / VR
+# Samsung Gear/Watch
 pm uninstall -k --user 0 com.samsung.android.app.watchmanagerstub
 pm uninstall -k --user 0 com.samsung.android.smartswitchassistant
-pm uninstall -k --user 0 com.samsung.android.hmt.vrsvc
 
 # Smart Things
 pm uninstall -k --user 0 com.samsung.android.beaconmanager
 pm uninstall -k --user 0 com.samsung.android.service.stplatform
 
 # Samsug Health
-pm uninstall -k --user 0 com.sec.android.service.health 
+pm uninstall -k --user 0 com.samsung.android.service.health 
 
 # Samsung Dual Messenger
 pm uninstall -k --user 0 com.samsung.android.da.daagent
@@ -193,23 +151,17 @@ pm uninstall -k --user 0 com.samsung.android.da.daagent
 # Samsung Find My Mobile
 pm uninstall -k --user 0 com.samsung.android.fmm
 
-# Game Booster
-pm uninstall -k --user 0 com.samsung.android.game.gamehome
-pm uninstall -k --user 0 com.samsung.android.game.gametools
-pm uninstall -k --user 0 com.samsung.android.game.gos
-
 # Knox / Work profile
 pm uninstall -k --user 0 com.samsung.android.knox.analytics.uploader
 pm uninstall -k --user 0 com.samsung.android.knox.attestation
 pm uninstall -k --user 0 com.samsung.android.knox.containeragent
 pm uninstall -k --user 0 com.samsung.android.knox.containercore
-pm uninstall -k --user 0 com.samsung.knox.keychain
 pm uninstall -k --user 0 com.samsung.knox.securefolder
 pm uninstall -k --user 0 com.sec.enterprise.knox.attestation
 pm uninstall -k --user 0 com.sec.enterprise.knox.cloudmdm.smdms
 pm uninstall -k --user 0 com.sec.enterprise.mdm.services.simpin
 pm uninstall -k --user 0 com.knox.vpn.proxyhandler
-pm uninstall -k --user 0 com.samsung.android.bbc.bbcagent 
+pm uninstall -k --user 0 com.samsung.android.bbc.bbcagent
 pm uninstall -k --user 0 com.samsung.android.knox.pushmanager
 pm uninstall -k --user 0 com.android.managedprovisioning # Work profile setup
 pm uninstall -k --user 0 com.samsung.android.appseparation
@@ -224,6 +176,7 @@ pm uninstall -k --user 0 com.sec.android.app.desktoplauncher
 pm uninstall -k --user 0 com.sec.android.desktopmode.uiservice
 pm uninstall -k --user 0 com.samsung.android.mcfds
 pm uninstall -k --user 0 com.samsung.android.mcfserver
+pm uninstall -k --user 0 com.samsung.android.mdecservice # Call Text Other Devices
 
 # Samsung Pass / Pay / Payments
 pm uninstall -k --user 0 com.samsung.android.samsungpass
@@ -232,19 +185,14 @@ pm uninstall -k --user 0 com.samsung.android.spayfw
 pm uninstall -k --user 0 com.samsung.android.authfw
 pm uninstall -k --user 0 com.sec.android.app.billing
 
+# Game Booster
+pm uninstall -k --user 0 com.samsung.android.game.gamehome
+pm uninstall -k --user 0 com.samsung.android.game.gametools
+pm uninstall -k --user 0 com.samsung.android.game.gos
+
 # Samsung Cloud
 pm uninstall -k --user 0 com.samsung.android.scloud
 
-# Samsung Camera Extras
-pm uninstall -k --user 0 com.sec.android.autodoodle.service
-pm uninstall -k --user 0 com.samsung.android.livestickers
-pm uninstall -k --user 0 com.samsung.android.service.livedrawing
-
-#IMS - VoLTE, WiFi Calling and Rich Communication Services (RCS)
-pm uninstall -k --user 0 com.sec.ims # IMS (IP Multimedia Subsystem)
-pm uninstall -k --user 0  com.sec.imslogger 
-pm uninstall -k --user 0 com.sec.imsservice # IMS Service (see above for IMS)
-pm uninstall -k --user 0 com.samsung.advp.imssettings
-pm uninstall -k --user 0 com.sec.epdg
-pm uninstall -k --user 0 com.sec.unifiedwfc
-pm uninstall -k --user 0 com.samsung.ims.smk
+# Accessibility Apps
+pm uninstall -k --user 0 com.google.android.apps.accessibility.voiceaccess
+pm uninstall -k --user 0 com.google.audio.hearing.visualization.accessibility.scribe
