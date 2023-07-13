@@ -27,7 +27,7 @@ You can paste the above list directly on the terminal. Lines starting with '#' a
 ########
 
 # Printer
-pm uninstall -k --user 0 com.android.printspooler
+# pm uninstall -k --user 0 com.android.printspooler #avoid crash on websites that call printing popup
 pm uninstall -k --user 0 com.google.android.printservice.recommendation
 
 # Daydreams
@@ -50,10 +50,10 @@ pm uninstall -k --user 0 com.microsoft.appmanager
 pm uninstall -k --user 0 com.microsoft.skydrive
 
 # Samsung All Share / Nearby / Private Share
-pm uninstall -k --user 0 com.samsung.android.allshare.service.mediashare
+#pm uninstall -k --user 0 com.samsung.android.allshare.service.mediashare
 pm uninstall -k --user 0 com.samsung.android.easysetup
 pm uninstall -k --user 0 com.samsung.android.privateshare
-pm uninstall -k --user 0 com.samsung.android.smartmirroring
+#pm uninstall -k --user 0 com.samsung.android.smartmirroring - SmartMirroring for SamsungTV
 
 # Samsung Widgets / Edge Panels
 pm uninstall -k --user 0 com.samsung.android.app.cocktailbarservice # Edge Panels
